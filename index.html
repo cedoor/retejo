@@ -7,13 +7,33 @@
 	<div id="web-page"></div>
 
 	<script>
+		function injectScriptsFromHTML(htmlString) {
+			const parser = new DOMParser()
+			const htmlDoc = parser.parseFromString(htmlString, 'text/html')
+
+			const scriptTags = htmlDoc.getElementsByTagName('script')
+
+			for (let i = 0; i < scriptTags.length; i++) {
+				const scriptTag = scriptTags[i]
+
+				const newScriptTag = document.createElement('script')
+				newScriptTag.type = scriptTag.type
+				newScriptTag.src = scriptTag.src
+				newScriptTag.innerHTML = scriptTag.innerHTML
+
+				document.body.appendChild(newScriptTag)
+			}
+		}
+
 		const encodedString = window.location.search.slice(1)
 		const decodedString = decodeURIComponent(encodedString)
 		const decodedElement = document.createElement('div')
 
-		decodedElement.innerHTML = decodedString;
+		injectScriptsFromHTML(decodedString)
 
-		document.body.appendChild(decodedElement);
+		decodedElement.innerHTML = decodedString
+
+		document.body.appendChild(decodedElement)
 	</script>
 </body>
 </html>
