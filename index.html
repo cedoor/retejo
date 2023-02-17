@@ -25,7 +25,7 @@
 		}
 
 		const encodedString = window.location.search.slice(1)
-		const decodedString = decodeURIComponent(encodedString)
+		const decodedString = atob(decodeURIComponent(encodedString))
 		const decodedElement = document.createElement('div')
 
 		injectScriptsFromHTML(decodedString)
