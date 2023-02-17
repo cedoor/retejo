@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Retejo</title>
+</head>
+<body>
+	<div id="web-page"></div>
+
+	<script>
+		const encodedString = window.location.search.slice(1)
+		const decodedString = decodeURIComponent(encodedString)
+		const decodedElement = document.createElement('div')
+
+		decodedElement.innerHTML = decodedString;
+
+		document.body.appendChild(decodedElement);
+	</script>
+</body>
+</html>
