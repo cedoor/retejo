@@ -11,7 +11,7 @@ Ultralight JS script to show encoded web pages. Encode your web page with the [R
 ### Retejo encoder code
 
 ```html
-`<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
@@ -37,5 +37,4 @@ Ultralight JS script to show encoded web pages. Encode your web page with the [R
     }
   </script>
 </html>
-`
 ```
